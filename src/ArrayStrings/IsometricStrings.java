@@ -3,6 +3,8 @@ package ArrayStrings;
 import java.util.HashMap;
 import java.util.Map;
 
+// Curr question link : https://leetcode.com/problems/isomorphic-strings/
+//TODO : https://leetcode.com/problems/word-pattern/description/
 public class IsometricStrings {
     public boolean isIsomorphic(String s, String t) {
         HashMap<Character , Integer> shm = new HashMap();
