@@ -2,7 +2,7 @@ package SlidingWindowAnd2Pointers;
 
 import java.util.ArrayList;
 import java.util.List;
-
+// <->
 public class GenerateAllSubstringOfString {
 
     public static void main(String[] args) {

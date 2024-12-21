@@ -1,7 +1,7 @@
 package SlidingWindowAnd2Pointers;
 
 import java.util.HashMap;
-
+// <->
 //https://leetcode.com/problems/check-if-array-pairs-are-divisible-by-k/
 public class ArrayPairsDivisibleByK {
     public boolean canArrange(int[] arr, int k) {
