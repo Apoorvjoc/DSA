@@ -17,7 +17,7 @@ public class RottenOranges {
         public Pair(int row , int col , int time){
             this.row = row;
             this.col = col;
-            this.time = time;
+            this.time = time; // take care of adding time
         }
     }
 
@@ -45,7 +45,7 @@ public class RottenOranges {
                     vis[row][col] = 1;
                     // break;
                 }else if(grid[row][col] == 1){
-                    freshOranges++;
+                    freshOranges++; // take care of counting fresh oranges
                 }
             }
         }
@@ -64,11 +64,9 @@ public class RottenOranges {
 
                 if(isValid(nRow , nCol , grid , vis)){
                     vis[nRow][nCol] = 1;
-                    if(grid[nRow][nCol] == 1){
-                        grid[nRow][nCol] = 2;
-                        q.add(new Pair(nRow , nCol, tm+1));
-                        cnt++;
-                    }
+                    grid[nRow][nCol] = 2;
+                    q.add(new Pair(nRow , nCol, tm+1)); // take care for this
+                    cnt++;
                 }
             }
         }
