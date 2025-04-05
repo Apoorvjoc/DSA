@@ -3,17 +3,18 @@ package Graphs.Traversals.Matrix;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class ZeroOneMat {    class Triplet{
-    int row;
-    int col;
-    int dist;
+public class ZeroOneMat {
+    class Triplet{
+        int row;
+        int col;
+        int dist;
 
-    Triplet(int row , int col , int dist){
-        this.row = row;
-        this.col = col;
-        this.dist = dist;
+        Triplet(int row , int col , int dist){
+            this.row = row;
+            this.col = col;
+            this.dist = dist;
+        }
     }
-}
 
     public int[][] updateMatrix(int[][] mat) {
         Queue<Triplet> q = new LinkedList();

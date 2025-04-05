@@ -1,4 +1,4 @@
-package Graphs.Traversals;
+package Graphs.Traversals.CycleDetect;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
