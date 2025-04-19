@@ -1,4 +1,4 @@
-package Graphs.Traversals.NumberOfProvinces;
+package Graphs.NumberOfProvinces;
 
 import java.util.ArrayList;
 

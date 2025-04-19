@@ -1,4 +1,4 @@
-package Graphs.Traversals.Matrix;
+package Graphs.Matrix;
 
 
 //https://leetcode.com/problems/surrounded-regions/

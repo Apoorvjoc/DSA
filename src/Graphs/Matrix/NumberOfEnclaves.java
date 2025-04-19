@@ -1,4 +1,4 @@
-package Graphs.Traversals.Matrix;
+package Graphs.Matrix;
 
 import java.util.LinkedList;
 import java.util.Queue;
