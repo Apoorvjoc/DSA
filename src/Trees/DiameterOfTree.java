@@ -39,10 +39,13 @@ class Diameter_optimal{
     private int calcHeight(TreeNode root , int diameter[]){
         if(root == null)return 0;
 
-        int lh =  calcHeight(root.left , diameter);
-        int rh =  calcHeight(root.right , diameter);
+        int lh = calcHeight(root.left , diameter);
+        int rh = calcHeight(root.right , diameter);
 
-        diameter[0] = Math.max(lh+rh , diameter[0]);
+        int sum = lh + rh;
+        int maxOfLhAndRh = Math.max(lh , rh); // picking max of left or right diameter
+
+        diameter[0] = Math.max(sum , Math.max(maxOfLhAndRh , diameter[0]));
 
         return Math.max(rh , lh) + 1;
     }
