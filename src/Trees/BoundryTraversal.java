@@ -19,61 +19,45 @@ public class BoundryTraversal {
         }
 
         // Add the left boundary (excluding leaf nodes)
-        addLeftBoundary(node.left, ans);
+        leftBoundary(node.left, ans);
 
         // Add all leaf nodes
-        addLeafNodes(node, ans);
+        leafNodes(node, ans);
 
         // Add the right boundary (excluding leaf nodes, and in reverse order)
-        addRightBoundary(node.right, ans);
+        rightBoundary(node.right, ans);
 
         return ans;
     }
 
-    private void addLeftBoundary(Node node, ArrayList<Integer> ans) {
-        while (node != null) {
-            if (node.left != null || node.right != null) {
-                ans.add(node.data);
-            }
-            if (node.left != null) {
-                node = node.left;
-            } else if (node.right != null) {
-                node = node.right;
-            } else {
-                break; // leaf node
-            }
+    private void leafNodes(Node root , ArrayList<Integer> temp){
+        if(root == null)return;
+        if(root.left == null && root.right == null)temp.add(root.data);
+
+        leafNodes(root.left , temp);
+        leafNodes(root.right , temp);
+    }
+
+    private void leftBoundary(Node root , ArrayList<Integer> temp){
+
+        while(root != null){
+            if(!(root.left == null && root.right == null))temp.add(root.data);// skip leaf node
+            if(root.left != null)root = root.left;
+            else root = root.right;
         }
     }
 
-    private void addLeafNodes(Node node, ArrayList<Integer> ans) {
-        if (node == null) {
-            return;
-        }
-        if (node.left == null && node.right == null) {
-            ans.add(node.data);
-            return;
-        }
-        // Recur for left and right subtrees
-        addLeafNodes(node.left, ans);
-        addLeafNodes(node.right, ans);
-    }
+    private void rightBoundary(Node root , ArrayList<Integer> temp){
+        ArrayList<Integer> res = new ArrayList();
 
-    private void addRightBoundary(Node node, ArrayList<Integer> ans) {
-        List<Integer> rightBoundary = new ArrayList<>();
-        while (node != null) {
-            if (node.left != null || node.right != null) {
-                rightBoundary.add(node.data);
-            }
-            if (node.right != null) {
-                node = node.right;
-            } else if (node.left != null) {
-                node = node.left;
-            } else {
-                break; // leaf node
-            }
+        while(root != null){
+            if(!(root.left == null && root.right == null))res.add(root.data);// skip leaf node
+            if(root.right != null)root = root.right;
+            else root = root.left;
         }
-        // Add right boundary in reverse order
-        Collections.reverse(rightBoundary);
-        ans.addAll(rightBoundary);
+        // skip root and reverse list
+        for(int i = res.size()-1 ; i>=0 ; i--){
+            temp.add(res.get(i));
+        }
     }
 }

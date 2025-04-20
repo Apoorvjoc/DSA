@@ -23,7 +23,7 @@ public class ZigZagTraversal {
                 if(front.right != null)q.add(front.right);
             }
 
-            if(leftToRight == false){ // thing which is diff from level order traversal
+            if(!leftToRight){ // thing which is diff from level order traversal
                 Collections.reverse(sAns);
             }
 
