@@ -1,6 +1,5 @@
 package Trees.Views;
 
-import Trees.Node;
 
 import java.util.ArrayList;
 
