@@ -48,3 +48,29 @@ class RootToLeafPath_stringBuilder {
         helper(root.right , ans , new StringBuilder(sAns));
     }
 }
+
+class withArrayList{
+    public static ArrayList<ArrayList<Integer>> Paths(Node root) {
+        // code here
+        ArrayList<ArrayList<Integer>> ans = new ArrayList();
+
+        rootToLeafPaths(root , ans , new ArrayList());
+
+        return ans;
+    }
+
+    private static void rootToLeafPaths(Node root , ArrayList<ArrayList<Integer>> ans , ArrayList<Integer>path){
+        if(root == null)return;
+
+        path.add(root.data);
+
+        if(root.left == null && root.right == null){
+            ans.add(new ArrayList(path));
+        }
+
+        rootToLeafPaths(root.left , ans , path);
+        rootToLeafPaths(root.right , ans , path);
+
+        path.remove(path.size()-1);
+    }
+}
