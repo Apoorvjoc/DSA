@@ -1,4 +1,6 @@
-package Trees;
+package Trees.Views;
+
+import Trees.TreeNode;
 
 import java.util.*;
 

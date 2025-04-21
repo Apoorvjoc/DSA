@@ -1,8 +1,8 @@
-package Trees;
+package Trees.Views;
+
+import Trees.Node;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class BoundryTraversal {
     ArrayList<Integer> boundaryTraversal(Node node) {
