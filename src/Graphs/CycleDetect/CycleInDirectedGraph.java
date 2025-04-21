@@ -1,4 +1,4 @@
-package Graphs.Traversals.CycleDetect;
+package Graphs.CycleDetect;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Queue;
 
 public class CycleInDirectedGraph {
-    public boolean isCyclic(int V, List<Integer>[] edges) {
+    public boolean isCyclic_KahnAlgo_TOPO_SORT(int V, List<Integer>[] edges) {
         Queue<Integer> q = new LinkedList();
         int indegree[] = new int[V];
         ArrayList<Integer> ans = new ArrayList<Integer>();
