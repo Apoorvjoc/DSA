@@ -11,6 +11,8 @@ public class CountNodesInCompleteTree {
 }
 
 //approach 2 :o(logn)^2;
+// log(n) for height
+// log(n) for traversing
 class CountNodes_Optimized{
     public int countNodes(TreeNode root) {
         if(root == null) return 0;
@@ -18,9 +20,10 @@ class CountNodes_Optimized{
         int lh = calcLeftHeight(root);
         int rh = calcRightHeight(root);
 
-        if(rh == lh) return (1 << lh) - 1;
+        if(rh == lh) return (1 << lh) - 1; // => 2^h - 1   ==> dry run this formula for different examples
 
         return 1 + countNodes(root.left) + countNodes(root.right);
+        // formula to calc nodes in BT => [ ans = currNode(1)  +  (2^leftHeight - 1) + (2^rightHeight - 1)  ];
     }
 
     private int calcLeftHeight(TreeNode root){
