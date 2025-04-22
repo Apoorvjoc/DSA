@@ -8,7 +8,7 @@ public class SurroundedRegions {
         int m = board[0].length;
         int vis[][] = new int[n][m];
 
-        // go to all bounderies and mark 'O' as 1 as they can be converted to 'X' as pe logic
+        // go to all boundaries and mark 'O' as 1 in vis matrix as they cannot be converted to 'X' as pe logic
         //top row
         for(int row = 0 , col = 0 ; col < m ; col++ ){
             if(board[row][col] == 'O'){
