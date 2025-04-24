@@ -2,6 +2,7 @@ package Trees;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 
 /*
@@ -16,8 +17,8 @@ HashMap space is O(N) for storing inorder indices.
 Total space = map + recursion stack → O(N)
  */
 public class BuildTreeFromPreAndIn {
+
     public TreeNode buildTree(int[] preorder, int[] inorder ) {
-        int preorderIdx = 0;
         int n = inorder.length;
         Map<Integer , Integer> mp = new HashMap();
         for(int i = 0 ; i<n ; i++){
