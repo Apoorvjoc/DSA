@@ -3,6 +3,7 @@ package Trees;
 import java.util.ArrayList;
 import java.util.List;
 
+// tc : o(n) sc : o(1)
 public class MorrisTraversal {
     private TreeNode getRightmostNode(TreeNode left , TreeNode curr){
         while(left.right != null && left.right != curr){

@@ -30,6 +30,12 @@ public class VerticalOrderTraversal {
     public void helper(TreeNode root , Map<Integer , List<NodeWithDepth>> hm , int vertical , int depth){
         if(root == null)return;
 
+//        if (!hm.containsKey(vertical)) {
+//            hm.put(vertical, new ArrayList<>());
+//        }
+//        hm.get(vertical).add(new NodeWithDepth(root.val, depth));
+
+
         hm.computeIfAbsent(vertical, k -> new ArrayList<>()).add(new NodeWithDepth(root.val , depth));
 
         helper(root.left , hm , vertical - 1 , depth + 1);
