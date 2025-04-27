@@ -29,3 +29,22 @@ public class InsertIntoBST {
 
     //TODO Try with iterative approach
 }
+
+class approach2{
+    public TreeNode insertIntoBST(TreeNode root, int val) {
+        if(root == null)return new TreeNode(val);
+
+        helper(root , val);
+
+        return root;
+    }
+
+    private void helper(TreeNode root , int val){
+        if(root.left == null && root.val > val){ // if any point of time if null encounters then if val is smaller , then insert at left
+            root.left = new TreeNode(val);
+        }else if(root.right == null && root.val < val){// if any point of time if null encounters then if val is smaller , then insert at right
+            root.right = new TreeNode(val);
+        }else if(root.val < val)helper(root.right , val);
+        else helper(root.left , val);
+    }
+}
