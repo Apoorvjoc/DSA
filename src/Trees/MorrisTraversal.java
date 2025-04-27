@@ -1,6 +1,7 @@
 package Trees;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 // tc : o(n) sc : o(1)
@@ -63,5 +64,42 @@ public class MorrisTraversal {
         }
 
         return ans;
+    }
+}
+
+class postOrderTraversal{
+    public List<Integer> postorderTraversal(TreeNode root){
+        List<Integer> ans = new ArrayList<>();
+
+        TreeNode curr = root;
+
+        while(curr != null){
+            TreeNode  right = curr.right;
+            if(right == null){
+                ans.add(curr.val);
+                curr = curr.left;
+            }else {
+                TreeNode leftMostNode = getLeftMostNode(right , curr);
+
+                if(leftMostNode.left != curr){
+                    leftMostNode.left = curr; // create thread
+                    curr = curr.right;
+                }else{
+                    leftMostNode.left = null; //remove thread
+                    ans.add(curr.val);
+                    curr = curr.left;
+                }
+            }
+        }
+
+        Collections.reverse(ans);
+        return ans;
+    }
+
+    private TreeNode getLeftMostNode(TreeNode right, TreeNode curr) {
+        while(right.left != null && right.left != curr){
+            right = right.left;
+        }
+        return right;
     }
 }
