@@ -55,8 +55,7 @@ public class BottomView {
 }
 
 class bottomView_anotherWay{
-    class topView_anotherway {
-        static ArrayList<Integer> topView_anotherway(Node root) {
+        static ArrayList<Integer> anotherway(Node root) {
             ArrayList<Integer> ans = new ArrayList<>();
             if (root == null) return ans;
 
@@ -75,7 +74,7 @@ class bottomView_anotherWay{
 //                }
 
                 //cpmment above line and put values without check
-                map.put(line, curr.data);
+                map.put(line, curr.data); // diff lines from top view
 
                 if (curr.left != null) {
                     q.add(new Trees.Views.topView_anotherway.Pair(curr.left, line - 1));
@@ -101,5 +100,4 @@ class bottomView_anotherWay{
                 hd = h;
             }
         }
-    }
 }
